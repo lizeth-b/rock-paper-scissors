@@ -35,11 +35,10 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-  let validGames = 0;
   let playerScore = 0;
   let computerScore = 0;
 
-  while (validGames < 5) {
+  while (playerScore < 5 && computerScore < 5) {
     let playerInput = prompt("Rock, Paper, or Scissors?").toUpperCase();
     if (playerInput === 'ROCK' || playerInput === 'PAPER' || playerInput === 'SCISSORS') {
       let roundResult = playRound(playerInput, getComputerChoice());
@@ -50,7 +49,6 @@ function game() {
         computerScore++;
       }
       console.log(`${playerScore}-${computerScore}`);
-      validGames++;
     }
     else {
       console.log("Invalid input");
