@@ -4,33 +4,21 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  if (playerSelection === 'ROCK' && computerSelection === 'PAPER') {
-    console.log("Player: ROCK. Computer: PAPER. You lose!");
-    return -1;
-  }
-  else if (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') {
-    console.log("Player: ROCK. Computer: SCISSORS. You win!");
-    return 1;
-  }
-  else if (playerSelection === 'PAPER' && computerSelection === 'ROCK') {
-    console.log("Player: PAPER. Computer: ROCK. You win!");
-    return 1;
-  }
-  else if (playerSelection === 'PAPER' && computerSelection === 'SCISSORS') {
-    console.log("Player: PAPER. Computer: SCISSORS. You lose!");
-    return -1;
-  }
-  else if (playerSelection === 'SCISSORS' && computerSelection === 'ROCK') {
-    console.log("Player: SCISSORS. Computer: ROCK. You lose!");
-    return -1;
-  }
-  else if (playerSelection === 'SCISSORS' && computerSelection === 'PAPER') {
-    console.log("Player: SCISSORS. Computer: PAPER. You win!");
-    return 1;
-  }
-  else if (playerSelection === computerSelection) {
+  if (playerSelection === computerSelection) {
     console.log(`Player: ${playerSelection}. Computer: ${computerSelection}. Draw!`);
     return 0;
+  }
+  else if (
+    (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') ||
+    (playerSelection === 'PAPER' && computerSelection === 'ROCK') ||
+    (playerSelection === 'SCISSORS' && computerSelection === 'PAPER')
+    ) {
+    console.log(`Player: ${playerSelection}. Computer: ${computerSelection}. You win!`);
+    return 1;
+  }
+  else {
+    console.log(`Player: ${playerSelection}. Computer: ${computerSelection}. You lose!`);
+    return -1;
   }
 }
 
