@@ -1,5 +1,3 @@
-const results = document.querySelector(".results-output");
-
 function getComputerChoice() {
   const choices = ['ROCK', 'PAPER', 'SCISSORS'];
   return choices[Math.floor(Math.random() * choices.length)];
@@ -22,34 +20,43 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function game() {
-  let playerScore = 0;
-  let computerScore = 0;
-  while (playerScore < 5 && computerScore < 5) {
-    const playerInput = prompt("Rock, Paper, or Scissors?").toUpperCase();
-    if (playerInput === 'ROCK' || playerInput === 'PAPER' || playerInput === 'SCISSORS') {
-      const roundResult = playRound(playerInput, getComputerChoice());
-      if (roundResult === 1) {
-        playerScore++;
-      } else if (roundResult === -1) {
-        computerScore++;
-      }
-      results.textContent += `${playerScore}-${computerScore}\n\n`;
-    } else {
-      results.textContent += "Invalid input\n\n";
+function game(pInput, pScore, cScore) {
+  if (pInput === 'ROCK' || pInput === 'PAPER' || pInput === 'SCISSORS') {
+    const roundResult = playRound(pInput, getComputerChoice());
+    if (roundResult === 1) {
+      playerScore++;
+    } else if (roundResult === -1) {
+      computerScore++;
     }
-  }
-  
-  let gameResult;
-  if (playerScore > computerScore) {
-    gameResult = "Player";
-  } else if (computerScore > playerScore) {
-    gameResult = "Computer";
-  } else if (playerScore === computerScore) {
-    gameResult = "Draw";
+    results.textContent += `${playerScore}-${computerScore}\n\n`;
+  } else {
+    results.textContent += "Invalid input\n\n";
   }
 
-  results.textContent += `Winner: ${gameResult}\n`;
+  if (playerScore === 5 || computerScore === 5) {
+    let gameResult;
+    if (playerScore > computerScore) {
+      gameResult = "Player";
+    } else if (computerScore > playerScore) {
+      gameResult = "Computer";
+    } else if (playerScore === computerScore) {
+      gameResult = "Draw";
+    }
+  
+    results.textContent += `Winner: ${gameResult}\n`;
+  }
 }
 
-game();
+let playerScore = 0;
+let computerScore = 0;
+const results = document.querySelector(".results-output");
+results.style.whiteSpace = "pre";
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    if (playerScore < 5 && computerScore < 5) {
+      game(e.target.textContent.toUpperCase(), playerScore, computerScore);
+    }
+  });
+});
