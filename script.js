@@ -5,17 +5,20 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    results.textContent += `Player: ${playerSelection}. Computer: ${computerSelection}. Draw!\n`;
+    pScoreboardStatus.textContent = `${playerSelection} - Draw`;
+    cScoreboardStatus.textContent = `${computerSelection} - Draw`;
     return 0;
   } else if (
     (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') ||
     (playerSelection === 'PAPER' && computerSelection === 'ROCK') ||
     (playerSelection === 'SCISSORS' && computerSelection === 'PAPER')
     ) {
-    results.textContent += `Player: ${playerSelection}. Computer: ${computerSelection}. You win!\n`;
+    pScoreboardStatus.textContent = `${playerSelection} - Win`;
+    cScoreboardStatus.textContent = `${computerSelection} - Lose`;
     return 1;
   } else {
-    results.textContent += `Player: ${playerSelection}. Computer: ${computerSelection}. You lose!\n`;
+    pScoreboardStatus.textContent = `${playerSelection} - Lose`;
+    cScoreboardStatus.textContent = `${computerSelection} - Win`;
     return -1;
   }
 }
@@ -25,32 +28,30 @@ function game(pInput, pScore, cScore) {
     const roundResult = playRound(pInput, getComputerChoice());
     if (roundResult === 1) {
       playerScore++;
+      pScoreboardScore.textContent = playerScore;
     } else if (roundResult === -1) {
       computerScore++;
+      cScoreboardScore.textContent = computerScore;
     }
-    results.textContent += `${playerScore}-${computerScore}\n\n`;
-  } else {
-    results.textContent += "Invalid input\n\n";
   }
 
   if (playerScore === 5 || computerScore === 5) {
-    let gameResult;
     if (playerScore > computerScore) {
-      gameResult = "Player";
+      pScoreboardStatus.textContent = "WINNER";
+      cScoreboardStatus.textContent = "LOSER";
     } else if (computerScore > playerScore) {
-      gameResult = "Computer";
-    } else if (playerScore === computerScore) {
-      gameResult = "Draw";
-    }
-  
-    results.textContent += `Winner: ${gameResult}\n`;
+      pScoreboardStatus.textContent = "LOSER";
+      cScoreboardStatus.textContent = "WINNER";
+    }  
   }
 }
 
 let playerScore = 0;
 let computerScore = 0;
-const results = document.querySelector(".results-output");
-results.style.whiteSpace = "pre";
+const pScoreboardScore = document.querySelector(".scoreboard-player-score");
+const cScoreboardScore = document.querySelector(".scoreboard-computer-score");
+const pScoreboardStatus = document.querySelector(".scoreboard-player-status");
+const cScoreboardStatus = document.querySelector(".scoreboard-computer-status");
 const buttons = document.querySelectorAll("button");
 
 buttons.forEach((button) => {
