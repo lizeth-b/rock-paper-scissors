@@ -1,4 +1,54 @@
 html {
   box-sizing: border-box;
+}
+
+body {
   font-family: 'Tilt Neon', cursive;
+  text-align: center;
+}
+
+.title {
+}
+
+.scoreboard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 80px;
+}
+
+.scoreboard-player {
+  min-width: 120px;
+}
+
+.scoreboard-player-title {
+}
+
+.scoreboard-player-score {
+}
+
+.scoreboard-player-status {
+}
+
+.scoreboard-computer {
+  min-width: 120px;
+}
+
+.scoreboard-computer-title {
+}
+
+.scoreboard-computer-score {
+}
+
+.scoreboard-computer-status {
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 20px;
+  padding-top: 50px;
 }
