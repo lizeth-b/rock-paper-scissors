@@ -52,7 +52,7 @@ const pScoreboardScore = document.querySelector(".scoreboard-player-score");
 const cScoreboardScore = document.querySelector(".scoreboard-computer-score");
 const pScoreboardStatus = document.querySelector(".scoreboard-player-status");
 const cScoreboardStatus = document.querySelector(".scoreboard-computer-status");
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll(".button");
 
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
