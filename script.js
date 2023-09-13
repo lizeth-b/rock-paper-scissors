@@ -42,7 +42,8 @@ function game(pInput, pScore, cScore) {
     } else if (computerScore > playerScore) {
       pScoreboardStatus.textContent += "\nLOSER";
       cScoreboardStatus.textContent += "\nWINNER";
-    }  
+    }
+    again.classList.add("visible");
   }
 }
 
@@ -55,6 +56,7 @@ const cScoreboardStatus = document.querySelector(".scoreboard-computer-status");
 pScoreboardStatus.style.whiteSpace = "pre";
 cScoreboardStatus.style.whiteSpace = "pre";
 const buttons = document.querySelectorAll(".button");
+const again = document.querySelector(".again");
 
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
@@ -62,4 +64,14 @@ buttons.forEach((button) => {
       game(e.target.dataset.choice.toUpperCase(), playerScore, computerScore);
     }
   });
+});
+
+again.addEventListener("click", () => {
+  playerScore = 0;
+  computerScore = 0;
+  pScoreboardScore.textContent = playerScore;
+  cScoreboardScore.textContent = computerScore;
+  pScoreboardStatus.textContent = "";
+  cScoreboardStatus.textContent = "";
+  again.classList.remove("visible");
 });

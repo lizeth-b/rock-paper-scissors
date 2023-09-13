@@ -92,3 +92,13 @@ body {
   background-color: #fda1b8;
   color: #010001;
 }
+
+.again {
+  display: none;
+  margin-top: 60px;
+  color: #c9c8cd;
+}
+
+.visible {
+  display: block;
+}
