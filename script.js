@@ -37,11 +37,11 @@ function game(pInput, pScore, cScore) {
 
   if (playerScore === 5 || computerScore === 5) {
     if (playerScore > computerScore) {
-      pScoreboardStatus.textContent = "WINNER";
-      cScoreboardStatus.textContent = "LOSER";
+      pScoreboardStatus.textContent += "\nWINNER";
+      cScoreboardStatus.textContent += "\nLOSER";
     } else if (computerScore > playerScore) {
-      pScoreboardStatus.textContent = "LOSER";
-      cScoreboardStatus.textContent = "WINNER";
+      pScoreboardStatus.textContent += "\nLOSER";
+      cScoreboardStatus.textContent += "\nWINNER";
     }  
   }
 }
@@ -52,12 +52,14 @@ const pScoreboardScore = document.querySelector(".scoreboard-player-score");
 const cScoreboardScore = document.querySelector(".scoreboard-computer-score");
 const pScoreboardStatus = document.querySelector(".scoreboard-player-status");
 const cScoreboardStatus = document.querySelector(".scoreboard-computer-status");
+pScoreboardStatus.style.whiteSpace = "pre";
+cScoreboardStatus.style.whiteSpace = "pre";
 const buttons = document.querySelectorAll(".button");
 
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
     if (playerScore < 5 && computerScore < 5) {
-      game(e.target.textContent.toUpperCase(), playerScore, computerScore);
+      game(e.target.dataset.choice.toUpperCase(), playerScore, computerScore);
     }
   });
 });
