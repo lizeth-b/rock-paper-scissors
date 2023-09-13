@@ -33,6 +33,7 @@ body {
 }
 
 .scoreboard-player-status {
+  padding-top: 20px;
   visibility: hidden;
   color: #c9c8cd;
 }
@@ -50,6 +51,7 @@ body {
 }
 
 .scoreboard-computer-status {
+  padding-top: 20px;
   visibility: hidden;
   color: #c9c8cd;
 }
