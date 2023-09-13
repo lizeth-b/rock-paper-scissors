@@ -4,6 +4,8 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
+  pScoreboardStatus.classList.add("visible");
+  cScoreboardStatus.classList.add("visible");
   if (playerSelection === computerSelection) {
     pScoreboardStatus.textContent = `${playerSelection} - Draw`;
     cScoreboardStatus.textContent = `${computerSelection} - Draw`;
@@ -71,7 +73,9 @@ again.addEventListener("click", () => {
   computerScore = 0;
   pScoreboardScore.textContent = playerScore;
   cScoreboardScore.textContent = computerScore;
-  pScoreboardStatus.textContent = "";
-  cScoreboardStatus.textContent = "";
+  pScoreboardStatus.textContent = "0";
+  cScoreboardStatus.textContent = "0";
+  pScoreboardStatus.classList.remove("visible");
+  cScoreboardStatus.classList.remove("visible");
   again.classList.remove("visible");
 });
