@@ -125,3 +125,87 @@ body {
   display: block;
   visibility: visible;
 }
+
+@media (min-width: 576px) {
+  .title {
+    font-size: 38px;
+  }
+
+  .scoreboard-player-title, .scoreboard-computer-title {
+    font-size: 28px;
+  }
+
+  .scoreboard-player-score,
+  .scoreboard-computer-score,
+  .scoreboard-player-status,
+  .scoreboard-computer-status {
+    font-size: 19px;
+  }
+
+  .again {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 45px;
+  }
+
+  .scoreboard-player-title, .scoreboard-computer-title {
+    font-size: 33px;
+  }
+
+  .scoreboard-player-score,
+  .scoreboard-computer-score,
+  .scoreboard-player-status,
+  .scoreboard-computer-status {
+    font-size: 22px;
+  }
+
+  .again {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 992px) {
+  .title {
+    font-size: 54px;
+  }
+
+  .scoreboard-player-title, .scoreboard-computer-title {
+    font-size: 39px;
+  }
+
+  .scoreboard-player-score,
+  .scoreboard-computer-score,
+  .scoreboard-player-status,
+  .scoreboard-computer-status {
+    font-size: 26px;
+  }
+
+  .again {
+    font-size: 31px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .title {
+    font-size: 65px;
+  }
+
+  .scoreboard-player-title, .scoreboard-computer-title {
+    font-size: 46px;
+  }
+
+  .scoreboard-player-score,
+  .scoreboard-computer-score,
+  .scoreboard-player-status,
+  .scoreboard-computer-status {
+    font-size: 31px;
+  }
+
+  .again {
+    font-size: 37px;
+  }
+}
