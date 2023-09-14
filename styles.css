@@ -138,6 +138,10 @@ body {
     font-size: 38px;
   }
 
+  .scoreboard-player, .scoreboard-computer {
+    min-width: 144px;
+  }
+
   .scoreboard-player-title, .scoreboard-computer-title {
     font-size: 28px;
   }
@@ -157,6 +161,10 @@ body {
 @media (min-width: 768px) {
   .title {
     font-size: 45px;
+  }
+
+  .scoreboard-player, .scoreboard-computer {
+    min-width: 172px;
   }
 
   .scoreboard-player-title, .scoreboard-computer-title {
@@ -180,6 +188,10 @@ body {
     font-size: 54px;
   }
 
+  .scoreboard-player, .scoreboard-computer {
+    min-width: 207px;
+  }
+
   .scoreboard-player-title, .scoreboard-computer-title {
     font-size: 39px;
   }
@@ -193,12 +205,17 @@ body {
 
   .again {
     font-size: 31px;
+    cursor: pointer;
   }
 }
 
 @media (min-width: 1200px) {
   .title {
     font-size: 65px;
+  }
+
+  .scoreboard-player, .scoreboard-computer {
+    min-width: 248px;
   }
 
   .scoreboard-player-title, .scoreboard-computer-title {
