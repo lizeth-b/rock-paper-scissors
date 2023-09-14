@@ -153,6 +153,15 @@ body {
     font-size: 19px;
   }
 
+  .button {
+    width: 120px;
+    height: 120px;
+  }
+
+  .button svg {
+    scale: 1.2;
+  }
+
   .again {
     font-size: 22px;
   }
@@ -176,6 +185,15 @@ body {
   .scoreboard-player-status,
   .scoreboard-computer-status {
     font-size: 22px;
+  }
+
+  .button {
+    width: 144px;
+    height: 144px;
+  }
+
+  .button svg {
+    scale: 1.44;
   }
 
   .again {
@@ -203,6 +221,15 @@ body {
     font-size: 26px;
   }
 
+  .button {
+    width: 172px;
+    height: 172px;
+  }
+
+  .button svg {
+    scale: 1.72;
+  }
+
   .again {
     font-size: 31px;
     cursor: pointer;
@@ -227,6 +254,15 @@ body {
   .scoreboard-player-status,
   .scoreboard-computer-status {
     font-size: 31px;
+  }
+
+  .button {
+    width: 207px;
+    height: 207px;
+  }
+
+  .button svg {
+    scale: 2;
   }
 
   .again {
