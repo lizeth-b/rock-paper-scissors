@@ -10,6 +10,7 @@ body {
 
 .title {
   color: #c9c8cd;
+  transition: all 0.3s;
 }
 
 .scoreboard {
@@ -26,16 +27,19 @@ body {
 
 .scoreboard-player-title {
   color: #2cb99c;
+  transition: all 0.3s;
 }
 
 .scoreboard-player-score {
   color: #2cb99c;
+  transition: all 0.3s;
 }
 
 .scoreboard-player-status {
   padding-top: 20px;
   visibility: hidden;
   color: #c9c8cd;
+  transition: all 0.3s;
 }
 
 .scoreboard-computer {
@@ -44,16 +48,19 @@ body {
 
 .scoreboard-computer-title {
   color: #b92cb4;
+  transition: all 0.3s;
 }
 
 .scoreboard-computer-score {
   color: #b92cb4;
+  transition: all 0.3s;
 }
 
 .scoreboard-computer-status {
   padding-top: 20px;
   visibility: hidden;
   color: #c9c8cd;
+  transition: all 0.3s;
 }
 
 .buttons {

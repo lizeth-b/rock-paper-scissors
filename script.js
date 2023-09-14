@@ -73,8 +73,8 @@ again.addEventListener("click", () => {
   computerScore = 0;
   pScoreboardScore.textContent = playerScore;
   cScoreboardScore.textContent = computerScore;
-  pScoreboardStatus.textContent = "0";
-  cScoreboardStatus.textContent = "0";
+  pScoreboardStatus.textContent = "\t";
+  cScoreboardStatus.textContent = "\t";
   pScoreboardStatus.classList.remove("visible");
   cScoreboardStatus.classList.remove("visible");
   again.classList.remove("visible");
